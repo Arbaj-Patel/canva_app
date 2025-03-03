@@ -572,3 +572,27 @@ canvas:hover {
     max-height: calc(100vh - 80px);
   }
 }
+#undo-btn,
+#redo-btn {
+  width: 45%;
+  padding: 8px;
+  
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+#undo-btn:hover,
+#redo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+#undo-btn:active,
+#redo-btn:active {
+  transform: translateY(0);
+}

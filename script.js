@@ -16,6 +16,9 @@ let prevMouseX,
   brushWidth = 5,
   selectedColor = "#000"
 
+  
+const undoStack = []
+let redoStack = []
 // Add animation class to buttons when clicked
 const buttons = document.querySelectorAll("button")
 buttons.forEach((button) => {
@@ -191,6 +194,8 @@ const startDraw = (e) => {
   ctx.strokeStyle = selectedColor
   ctx.fillStyle = selectedColor
   snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height)
+  undoStack.push(snapshot)
+  redoStack = []
 }
 
 const drawPencil = (e) => {
@@ -309,4 +314,21 @@ canvas.addEventListener("touchend", () => {
   const mouseEvent = new MouseEvent("mouseup", {})
   canvas.dispatchEvent(mouseEvent)
 })
+
+function undo() {
+  if (undoStack.length > 0) {
+    redoStack.push(undoStack.pop())
+    ctx.putImageData(undoStack[undoStack.length - 1], 0, 0)
+  }
+}
+
+function redo() {
+  if (redoStack.length > 0) {
+    undoStack.push(redoStack[redoStack.length - 1])
+    ctx.putImageData(redoStack.pop(), 0, 0)
+  }
+}
+
+document.getElementById("undo-btn").addEventListener("click", undo)
+document.getElementById("redo-btn").addEventListener("click", redo)
 
