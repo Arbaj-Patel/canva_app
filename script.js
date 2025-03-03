@@ -194,8 +194,7 @@ const startDraw = (e) => {
   ctx.strokeStyle = selectedColor
   ctx.fillStyle = selectedColor
   snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height)
-  undoStack.push(snapshot)
-  redoStack = []
+  
 }
 
 const drawPencil = (e) => {
@@ -287,7 +286,6 @@ saveImage.addEventListener("click", () => {
 
 canvas.addEventListener("mousedown", startDraw)
 canvas.addEventListener("mousemove", drawing)
-canvas.addEventListener("mouseup", () => (isDrawing = false))
 
 // Add touch support for mobile devices
 canvas.addEventListener("touchstart", (e) => {
@@ -315,19 +313,32 @@ canvas.addEventListener("touchend", () => {
   canvas.dispatchEvent(mouseEvent)
 })
 
+canvas.addEventListener("mouseup", () => {
+  if (isDrawing) {
+    undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height)); 
+    redoStack = []; 
+  }
+  isDrawing = false;
+});
 function undo() {
-  if (undoStack.length > 0) {
-    redoStack.push(undoStack.pop())
-    ctx.putImageData(undoStack[undoStack.length - 1], 0, 0)
+  if (undoStack.length > 1) { 
+    redoStack.push(undoStack.pop()); 
+    ctx.putImageData(undoStack[undoStack.length - 1], 0, 0); 
+  } else if (undoStack.length === 1) {
+    redoStack.push(undoStack.pop());
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    setCanvasBackground(); 
   }
 }
 
 function redo() {
   if (redoStack.length > 0) {
-    undoStack.push(redoStack[redoStack.length - 1])
-    ctx.putImageData(redoStack.pop(), 0, 0)
+    const imageData = redoStack.pop();
+    undoStack.push(imageData); 
+    ctx.putImageData(imageData, 0, 0); 
   }
 }
+
 
 document.getElementById("undo-btn").addEventListener("click", undo)
 document.getElementById("redo-btn").addEventListener("click", redo)
