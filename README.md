@@ -2,8 +2,8 @@ preview   https://arbaj-patel.github.io/canva_app/
 
             Drawing Canvas Project Documentation
 
-Team Members
-
+Team Members <br>
+<pre>
 Name	                              Email
 Pooja Ashok Arle	             poojaarle6@gmail.com
 Arbaj Nisar Patel	             arbajpatel914@gmail.com
@@ -49,3 +49,4 @@ Use Cases:
 4. Conclusion
 
 The Drawing Canvas Project aims to be a powerful yet easy-to-use digital drawing solution for both casual users and professionals. With its robust feature set, seamless performance, and cross-device compatibility, this project is designed to enhance creativity, productivity, and collaboration. Future improvements may include AI-powered drawing enhancements, cloud storage integration, and extended collaboration features.
+</pre>
