@@ -1,18 +1,19 @@
-preview   https://arbaj-patel.github.io/canva_app/
+preview <br>  https://arbaj-patel.github.io/canva_app/   <br> https://a8-drawing-canva.netlify.app/
 
             Drawing Canvas Project Documentation
 
 Team Members <br>
 <pre>
 Name	                              Email
-Pooja Ashok Arle	             poojaarle6@gmail.com
-Arbaj Nisar Patel	             arbajpatel914@gmail.com
-Shubham Gorakshnath Handore	     shubhamps0109@gmail.com
-Sayma Aslam Pathan	             sayma2774@gmail.com
-Shital Chaudhari	             chaudharishital817@gmail.com
-Santhi Choppa	                 shanthichoppa@gmail.com
-Vaibhav Sambhaji Savant        	 savantvaibhav76@gmail.com
-
+Pooja Ashok Arle	              poojaarle6@gmail.com
+Arbaj Nisar Patel	              arbajpatel914@gmail.com
+Shubham Gorakshnath Handore	  shubhamps0109@gmail.com
+Sayma Aslam Pathan	              sayma2774@gmail.com
+Shital Chaudhari	              chaudharishital817@gmail.com
+Santhi Choppa	              shanthichoppa@gmail.com
+Vaibhav Sambhaji Savant        	  savantvaibhav76@gmail.com
+</pre>
+<pre>
 1. Business Purpose
 
 The Drawing Canvas Project is designed to offer users a versatile digital platform for creating, editing, and sharing drawings or designs. This tool caters to a wide range of users, from students and teachers to artists, designers, and business professionals. The primary objectives of this project are to enhance creativity, improve productivity, and provide an intuitive and interactive drawing experience.
