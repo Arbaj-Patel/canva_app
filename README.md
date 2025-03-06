@@ -2,7 +2,7 @@ preview   https://arbaj-patel.github.io/canva_app/
 
             Drawing Canvas Project Documentation
 
-Team Members
+Team Members <br>
 
 Name	                              Email
 Pooja Ashok Arle	             poojaarle6@gmail.com
